@@ -16,8 +16,8 @@ Some code and wiring inspired by http://en.wikiversity.org/wiki/User:Dstaub/robo
 #define led2 10
 
 
-#define trigPin 13
-#define echoPin 12
+#define trigPin 2
+#define echoPin 3
 
 void setup() {
   Serial.begin (9600);
@@ -26,8 +26,9 @@ void setup() {
   //pinMode(led, OUTPUT);
   //pinMode(led2, OUTPUT);
 
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
+  // For Galileo use this with trigPin 2 and echoPin 3
+  pinMode(trigPin, OUTPUT_FAST);
+  pinMode(echoPin, INPUT_FAST);
 }
 
 

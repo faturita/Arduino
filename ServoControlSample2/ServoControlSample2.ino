@@ -50,8 +50,8 @@ ControlledServo tilt;
 ControlledServo pan;
 
 void setup() {
-  tilt.servo.attach(14);
-  pan.servo.attach(15);
+  //tilt.servo.attach(10);
+  pan.servo.attach(9);
   tilt.pos = 90;
   pan.pos = 90;
   tilt.tgtPos = 180;
@@ -61,7 +61,7 @@ void setup() {
 }
 
 void loop() {
-  tilt.update();
+  //tilt.update();
   pan.update();
 
   delay(90);
