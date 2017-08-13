@@ -6,7 +6,7 @@ bool debug = true;
 // create motor objects, 64KHz pwm
 //AF_DCMotor laser(1, MOTOR12_64KHZ);
 //AF_DCMotor turret(4, MOTOR12_64KHZ);
-AF_DCMotor elbow(3, MOTOR12_64KHZ);
+AF_DCMotor elbow(1, MOTOR12_64KHZ);
 
 
 

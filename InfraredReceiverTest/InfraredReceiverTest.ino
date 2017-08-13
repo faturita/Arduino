@@ -25,7 +25,7 @@
 #include "MeOrion.h"
 #include <SoftwareSerial.h>
 
-MeInfraredReceiver infraredReceiverDecode(PORT_6);
+MeInfraredReceiver infraredReceiverDecode(PORT_3);
 
 void setup()
 {
@@ -47,9 +47,11 @@ void loop()
     Serial.print("buttonState 0x");
     Serial.println(buttonState);
   }
+  //Serial.println("Checking...");
   if(infraredReceiverDecode.available())
   {
     ReceiverCode = infraredReceiverDecode.read();
+    Serial.print(ReceiverCode);
     switch(ReceiverCode)
     {
        case IR_BUTTON_A: Serial.println("Press A."); break;
