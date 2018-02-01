@@ -38,6 +38,7 @@ void loop() {
   else {
     //digitalWrite(led,LOW);
     //digitalWrite(led2,HIGH);
+    Serial.print(distance);
     Serial.println(" cm");
   }
   if (distance >= 200 || distance <= 0){

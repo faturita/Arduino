@@ -23,6 +23,18 @@
  * 8 - CTS
  * 9 - RI
  * 
+ * Drivers for Mac (Prolific):
+ * http://plugable.com/2011/07/12/installing-a-usb-serial-adapter-on-mac-os-x/
+ * http://plugable.com/drivers/prolific/
+ * 
+ * https://software.intel.com/en-us/setting-up-serial-terminal-on-system-with-mac-os-x
+ * 
+ * ls /dev/cu.usbserial*
+ * 
+ * screen /dev/cu.usbserial 115200 -L 
+ * 
+ * CTRL+A  ---> CTRL+K   Kill the session
+ * 
  */
 
 

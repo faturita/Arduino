@@ -13,7 +13,7 @@ void setup() {
   //servo1.setMinimumPulse(700);
 
   //servo2.attach(15); //analog pin 1
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.println("Ready");
 
 }
@@ -21,11 +21,11 @@ void setup() {
 void loop() {
   for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
     // in steps of 1 degree
-    //servo2.write(pos);              // tell servo to go to position in variable 'pos'
+    servo1.write(pos);              // tell servo to go to position in variable 'pos'
     delay(15);                       // waits 15ms for the servo to reach the position
   }
   for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
-    //servo2.write(pos);
+    servo1.write(pos);
    delay(15);                       // waits 15ms for the servo to reach the position
   }
 

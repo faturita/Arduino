@@ -37,7 +37,40 @@ void setup() {
 }
 
 
+/**
+ * AT+GMR  -> Version
+ * AT+RST  -> Reset
+ * 
+ * AT+CWMODE=2
+ * AT+CWSAP="ESP","password",1,4
+ * AT+CIPSTA="192.168.101.108"
+ * AT+CIPAP="192.168.1.1"
+ * 
+ * AT+CIFSR   Info de la interfaz
+ * AT+CIPAP?   IP
+ * 
+ * AT+CWLIF   Quienes estan conectados
+ * 
+ * 
+ * AT+CWDHCP=0,1   Habilitar DHCP
+ * 
+ * 
+ * 
+ * 
+ * AT+CIPSTART="UDP","192.168.1.3",10000
+ * AT+CIPSEND=1
+ * Permite mandar 1 bytes
+ * 
+ * Si en ese momento se reciben bytes desde el otro lado
+ * de la conexion
+ * 
+ * se recibe
+ * +IPD,1:o
+ * 
+ * AT+CIPCLOSE
 
+ * 
+ */
 
 void loop() {
 
@@ -52,11 +85,13 @@ void loop() {
   }
 
 
+/**
   if ((!datasent) && ((millis()-previousMillis) > 1000*1000))
   {
     sendupdate();
     datasent=true;
   }
+**/
 
   if (Serial.available()) { //if USB client is available on Serial Port Monitor(Serial)
     delay(2000); // delay is required to whole reading of your command
@@ -72,6 +107,11 @@ void loop() {
   
 }
 
+
+void setupnet()
+{
+  Serial1.println("");
+}
 
 void sendupdate()
 {

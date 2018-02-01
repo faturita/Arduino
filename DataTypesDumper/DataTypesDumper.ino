@@ -98,6 +98,13 @@ void loop() {
  // http://arduino.cc/en/Reference/Double
  Serial.print("double: ");
  Serial.println(sizeof(double));
+
+  // Double precision floating point number. Occupies 4 bytes. 
+ // The double implementation on the Arduino is currently exactly the same as the float, 
+ // with no gain in precision.
+ // http://arduino.cc/en/Reference/Double
+ Serial.print("int16_t: ");
+ Serial.println(sizeof(int16_t));
  
 
  delay(8500);
