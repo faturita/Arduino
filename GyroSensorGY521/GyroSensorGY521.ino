@@ -6,6 +6,8 @@
 const int MPU_addr=0x68;  // I2C address of the MPU-6050
 int16_t AcX,AcY,AcZ,Tmp,GyX,GyY,GyZ;
 void setup(){
+  Serial.begin(9600);           // set up Serial library at 9600 bps
+  Serial.println("Serial Monitor...");
   Wire.begin();
   Wire.beginTransmission(MPU_addr);
   Wire.write(0x6B);  // PWR_MGMT_1 register
