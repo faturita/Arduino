@@ -16,19 +16,19 @@ Some code and wiring inspired by http://en.wikiversity.org/wiki/User:Dstaub/robo
 #define led2 10
 
 
-#define trigPin 2
-#define echoPin 3
+#define trigPin 6
+#define echoPin 7
 
 void setup() {
   Serial.begin (9600);
-  //pinMode(trigPin, OUTPUT);
-  //pinMode(echoPin, INPUT);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
   //pinMode(led, OUTPUT);
   //pinMode(led2, OUTPUT);
 
   // For Galileo use this with trigPin 2 and echoPin 3
-  pinMode(trigPin, OUTPUT_FAST);
-  pinMode(echoPin, INPUT_FAST);
+  //pinMode(trigPin, OUTPUT_FAST);
+  //pinMode(echoPin, INPUT_FAST);
 }
 
 
