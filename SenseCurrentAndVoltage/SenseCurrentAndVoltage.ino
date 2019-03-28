@@ -7,13 +7,15 @@
 
   Current divider
 
-  A0 ----- R2 -------- GND
-                  |
-                  R1
-                  |
-                  SIGNAL
+  A0 ----- R2 -------- GND ----
+                  |           |
+                  R1          |
+                  |           |
+                  SIGNAL+ --SIGNAL------------------------------------------------
+                                                                                  |
+  A1 ------ ACS712 (20A) ----- SIGNAL B+ -------- [USB CIRCUIT] ----- SIGNAL B- ---
 
-  This example code is in the public domain.
+  https://startingelectronics.org/articles/arduino/measuring-voltage-with-arduino/
 */
 
 // the setup routine runs once when you press reset:
@@ -23,7 +25,7 @@ void setup() {
 }
 
 int mVperAmp = 100; // use 185 for 5A, 100 for 20A (I have 2 of that) Module and 66 for 30A Module
-double ACSoffset = 0;
+double ACSoffset = 2497;
 
 float r1=28600;//32000.0;
 //float r1=90900.0;  // this is the first resistance 
@@ -38,12 +40,14 @@ void loop() {
   float voltage = input_voltage / (r2/(r1+r2)); // 10:1 relation to measure 50V
   //float voltage = input_voltage;
 
-
-  double Voltage = (sensorValue / 1023.0) * 5000; // Gets you mV
+  int currentValue = analogRead(A1);
+  double Voltage = (currentValue / 1023.0) * 5000; // Gets you mV
   double Amps = ((Voltage - ACSoffset) / mVperAmp);
 
   
   // print out the value you read:
+  Serial.print(currentValue);
+  Serial.print("-");
   Serial.print(voltage,4);
   Serial.print("-");
   Serial.println(Amps,3); // the '3' after voltage allows you to display 3 digits after decimal point
